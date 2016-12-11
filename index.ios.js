@@ -21,6 +21,9 @@ var React = require('react');
    TouchableOpacity,
  } from 'react-native';
 
+
+ var RadiusButton = require('./components/RadiusButton');  
+
  var myapp  = React.createClass({
     render(){
       return (
@@ -60,15 +63,39 @@ var React = require('react');
        <View style={styles.containView}>
           <Image source={{uri: 'https://facebook.github.io/react/img/logo_og.png'}}
        style={{width: 400, height: 400}} />
-          <Button 
-          onPress={this.toDetail}
-          title="查看简历"
-          accessibilityLabel="See an informative alert" />
 
-          <Button 
-          onPress={this.toResume}
-          title="查看作品"
-          accessibilityLabel="See an informative alert" /> 
+          <RadiusButton
+                btnName= '查看简历'
+                textStyle= {{
+                            fontSize: 16,
+                            color: '#222222',
+                          }}
+                btnStyle= {{
+                            width: 300,
+                            height: 44,
+                            borderRadius: 25,
+                            marginTop:15
+                          }}
+                underlayColor= '#4169e1'
+                onPress={this.toDetail} >
+          </RadiusButton>
+
+
+          <RadiusButton
+                btnName= '查看作品'
+                textStyle= {{
+                            fontSize: 16,
+                            color: '#222222',
+                          }}
+                btnStyle= {{
+                            width: 300,
+                            height: 44,
+                            borderRadius: 25,
+                            marginTop:15
+                          }}
+                underlayColor= '#4169e1'
+                onPress={this.toResume} >
+          </RadiusButton>
 
        </View>
      );
